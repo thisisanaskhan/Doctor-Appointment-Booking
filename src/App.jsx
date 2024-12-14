@@ -8,18 +8,22 @@ import Contact from './pages/Contact'
 import MyProfile from './pages/MyProfile'
 import MyAppointment from './pages/MyAppointment'
 import Appointment from './pages/Appointment'
+import Navbar from './components/Navbar'
+import Login from './pages/Login'
 
 
-function App() {
+const App=()=> {
  
 
   return (
-    <>
-    <div>
+  
+    <div className=' max-w-[1450px] mx-auto'>
+      
+    <Navbar/>
       <Routes>
         <Route path='/' element={<Home/>}/>
-        <Route path='/doctors'element={<Doctor/>}/>
-        <Route path='/doctors/:speciality' element={<Doctor/>}/>
+        <Route path='/doctor'element={<Doctor/>}/>
+        <Route path='/doctor/:speciality' element={<Doctor/>}/>
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/login' element={<Login/>}/>
@@ -30,7 +34,7 @@ function App() {
       
     </div>
        
-    </>
+    
   )
 }
 
