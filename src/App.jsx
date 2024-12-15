@@ -10,6 +10,7 @@ import MyAppointment from './pages/MyAppointment'
 import Appointment from './pages/Appointment'
 import Navbar from './components/Navbar'
 import Login from './pages/Login'
+import Header from './components/Header'
 
 
 const App=()=> {
@@ -17,9 +18,10 @@ const App=()=> {
 
   return (
   
-    <div className=' max-w-[1450px] mx-auto'>
+    <div className=' max-w-[1500px] mx-auto'>
       
     <Navbar/>
+   
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/doctor'element={<Doctor/>}/>
