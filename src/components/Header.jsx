@@ -3,7 +3,7 @@ import { assets } from '../assets/assets'
 
 const Header = () => {
   return (
-    <div className='flex flex-col md:flex-row flex-wrap  bg-primary rounded-lg md:px-10 lg:px-20'>  
+    <div className='mt-5 flex flex-col md:flex-row flex-wrap  bg-primary rounded-lg md:px-10 lg:px-20'>  
         {/* -------left----- */}
         <div className='md:w-1/2 flex flex-col items-start justify-center gap-4 py-10 m-auto md:py-[10vw] md:mb-[-30px]'> 
             <p className='lg:text-5xl md:text-4xl sm:text-3xl font-semibold text-white leading-tight md:leading-tight lg:leading-tight' >Book Appointment <br />With Trusted Doctors</p>
@@ -12,7 +12,7 @@ const Header = () => {
                 <p>Simply browse through our extensive list of trusted doctors,<br className='hidden sm:block'/>schedule your appointment hassle-free.</p>
 
             </div>
-            <button className='bg-white p-3 rounded-3xl text-sm m-auto md:m-0 hover:scale-105 transition-all duration-300'>Book appointment <img  src={assets.arrow_icon} className='inline w-3' /></button>
+            <a href="#speciality" className='flex gap-2  bg-white p-3 rounded-3xl text-sm m-auto md:m-0 hover:scale-105 transition-all duration-300' >Book appointment <img className='w-3'  src={assets.arrow_icon}/></a>
 
         </div>
         {/* -------right----- */}

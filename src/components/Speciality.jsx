@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Speciality = () => {
   return (
-    <div className='flex flex-col gap-4 justify-center items-center mt-20'>
+    <div id='speciality' className='flex flex-col gap-4 justify-center items-center mt-20'>
         <h1 className='text-3xl font-semibold'>Find by Speaciality</h1>
         <p className='text-gray-600 text-center sm:w-1/3 text-sm'>Simply browse through our extensive list of trusted doctors,schedule your appointment hassle-free.</p>
         <div className='flex sm:justify-center gap-4 items-center pt-5 w-full overflow-scroll'>

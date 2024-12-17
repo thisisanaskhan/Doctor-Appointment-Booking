@@ -11,6 +11,7 @@ import Appointment from './pages/Appointment'
 import Navbar from './components/Navbar'
 import Login from './pages/Login'
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 
 const App=()=> {
@@ -21,6 +22,7 @@ const App=()=> {
     <div className=' max-w-[1500px] mx-auto'>
       
     <Navbar/>
+   
    
       <Routes>
         <Route path='/' element={<Home/>}/>
@@ -33,7 +35,7 @@ const App=()=> {
         <Route path='/my-appointment' element={<MyAppointment/>}/>
         <Route path='/appointment/:docId' element={<Appointment/>}/>
       </Routes>
-      
+      <Footer/>
     </div>
        
     
