@@ -6,8 +6,10 @@ import { assets } from '../assets/assets'
 const Appointment = () => {
 
   const {docId} = useParams()
-  const [docInfo,setDocInfo]=useState(null)
   const {doctors,currency} = useContext(AppContext)
+
+  const [docInfo,setDocInfo]=useState(null)
+ 
   const daysOfWeek = ['SUN','MON','TUE','WED','THU','FRI','SAT']
 
   const[docSlots,setDocSlots]=useState([])
@@ -18,16 +20,16 @@ const Appointment = () => {
 
     const docInfo = doctors.find(doc => doc._id===docId)
     setDocInfo(docInfo)
+   
     
   }
 
-  const getAvailableSlots = async ()=>{
+  const getAvailableSlots = async () => {
 
     setDocSlots([])
-
     let today = new Date()
 
-    for(let i;i<7;i++){
+    for(let i=0; i<7; i++){
       //getting date with index
       let currentDate =new Date(today)
 
@@ -64,6 +66,7 @@ const Appointment = () => {
 
       setDocSlots(prev => ([...prev,timeSlots]))
     }
+    
   }
   useEffect(()=>{
     fetchDocInfo()
@@ -74,6 +77,10 @@ const Appointment = () => {
     getAvailableSlots()
 
   },[docInfo])
+
+  useEffect(()=>{
+    console.log(docSlots)
+  },[docSlots])
 
  
   return  docInfo && (
@@ -107,15 +114,23 @@ const Appointment = () => {
     {/* ......BOOKING.......... */}
     <div className='sm:ml-72 sm:pl-4 mt-4 font-medium text-gray-700'>
       <p>Booking Slot</p>
-      <div>
+      <div className='flex gap-3 items-center w-full overflow-x-scroll mt-4'>
         {
           docSlots.length && docSlots.map((item,index)=>(
-            <div key={index}>
+            <div onClick={()=>setSlotIndex(index)} className={`text-center py-6 min-w-16 rounded-full cursor-pointer  ${ slotIndex === index ? 'bg-primary text-white' : 'border border-gray-200'}`} key={index}  >
               <p>{item[0] && daysOfWeek[item[0].datetime.getDay()]}</p>
               <p>{item[0] && item[0].datetime.getDate()}</p>
             </div>
           ))
         }
+      </div>
+      <div >
+        {docSlots.length && docSlots[slotIndex].map((item,index)=>(
+          <p key={index}>
+            {item.time.toLowerCase()}
+          </p>
+        ))}
+
       </div>
     </div>
     </div>
