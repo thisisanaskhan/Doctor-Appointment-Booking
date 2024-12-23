@@ -125,14 +125,15 @@ const Appointment = () => {
           ))
         }
       </div>
-      <div >
+      <div className='flex items-center gap-3 w-full overflow-x-scroll mt-4' >
         {docSlots.length && docSlots[slotIndex].map((item,index)=>(
-          <p key={index}>
+          <p onClick={()=>setSlotTime(item.time)} className={`text-sm font-light flex-shrink-0 px-5 py-2 rounded-full cursor-pointer ${item.time === slotTime?'bg-primary text-white':'text-gray-600 border border-gray-200'}`} key={index}>
             {item.time.toLowerCase()}
           </p>
         ))}
 
       </div>
+      <button className='my-6 bg-primary text-white py-3 px-24 rounded-full'>Book Appointment</button>
     </div>
     <RelatedDoctors docId={docId} speciality={docInfo.speciality} />
     </div>
