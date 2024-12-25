@@ -4,12 +4,12 @@ import { assets } from '../assets/assets'
 const Contact = () => {
   return (
     <div>
-      <div className='text-center my-10 text-3xl text-gray-700'>
-        <p>CONTACT <span className='font-bold'>US</span></p>
+      <div className='text-center pt-10 text-2xl text-gray-500'>
+        <p>CONTACT <span className='font-bold text-gray-700'>US</span></p>
       </div>
-      <div className='flex flex-col md:flex-row gap-8 '>
+      <div className='my-10 flex flex-col md:flex-row gap-10 mb-28 text-sm justify-center'>
         <img className='w-full md:max-w-[360px]' src={assets.contact_image} alt="" />
-        <div className='flex flex-col gap-y-4  text-gray-700 justify-center items-start'>
+        <div className='flex flex-col gap-6  text-gray-700 justify-center items-start'>
           <p className='text-2xl font-medium'>OUR OFFICE</p>
           <p>54709 Willms Station <br />Suite 350, Washington,USA</p>
         
