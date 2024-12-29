@@ -19,7 +19,7 @@ const App=()=> {
 
   return (
   
-    <div className=' max-w-[1500px] mx-auto'>
+    <div className=' mx-4 sm:mx-[10%]'>
       
     <Navbar/>
    

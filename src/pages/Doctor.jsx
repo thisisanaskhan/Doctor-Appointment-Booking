@@ -30,10 +30,10 @@ const Doctor = () => {
   
   return (
     <div>
-      <p className='text-lg text-gray-600 '>Browse through the Specialist</p>
+      <p className='text-lg text-gray-600 mt-5'>Browse through the Specialist</p>
       <div className='flex flex-col sm:flex-row items-start gap-5 mt-5'>
-        <button className={`py-1 px-3 border rounded text-sm transition-all sm:hidden $()`} onClick={()=>setShowFilter(prev=>!prev)}>Filters</button>
-          <div className='flex flex-col gap-4 text-sm text-gray-600'>
+        <button className={`py-1 px-3 border rounded text-sm transition-all sm:hidden ${showFilter?'bg-primary text-white': ''}`} onClick={()=>setShowFilter(prev=>!prev)}>Filters</button>
+          <div className={`flex flex-col gap-4 text-sm text-gray-600 ${showFilter ?'flex':'hidden sm:flex'}` }>
             <p onClick={()=> speciality === 'General physician' ? navigate('/doctor') : navigate('/doctors/General physician')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-17 border border-gray-600 rounded-lg  transition-all cursor-pointer ${speciality === "General physician" ?"bg-blue-200 text-black":" "} `}>General physician</p>
             <p onClick={()=>speciality === 'Gynecologist' ? navigate('/doctor'):navigate('/doctors/Gynecologist')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-600  rounded-lg transition-all cursor-pointer  ${speciality === "Gynecologist" ?"bg-blue-200 text-black":" "}`}>Gynecologist</p>
             <p onClick={()=>speciality === 'Dermatologist' ? navigate('/doctor'):navigate('/doctors/Dermatologist')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-600 rounded-lg  transition-all cursor-pointer ${speciality === "Dermatologist" ?"bg-blue-200 text-black":" "}`}>Dermatologist</p>
@@ -41,7 +41,7 @@ const Doctor = () => {
             <p onClick={()=>speciality === 'Neurologist' ? navigate('/doctor'):navigate('/doctors/Neurologist')} className={`w-[94vw] sm:w-auto pl-3 py-1.5 pr-16 border border-gray-600 rounded-lg  transition-all cursor-pointer ${speciality === "Neurologist" ?"bg-blue-200 text-black":" "}`}>Neurologist</p>
 
           </div>
-          <div className='w-full grid grid-cols-5 gap-4 gap-y-6'>
+          <div className='w-full grid grid-cols-auto sm:grid-cols-auto gap-4 gap-y-6'>
             {
               filterDoc.map((items,index)=>(
                 <div key={index} onClick={()=>navigate(`/appointment/${items._id}`)} className='border border-blue-300 overflow-hidden rounded-xl hover:translate-y-[-10px]  transition-all duration-500   ' >
